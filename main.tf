@@ -16,12 +16,12 @@ resource "fastly_object_storage_access_keys" "main" {
   permission  = "read-write-admin"
 }
 
-module "s3" {
-  source = "./modules/s3"
-  
-  secret_key_id = fastly_object_storage_access_keys.main.id
-  secret_key    = fastly_object_storage_access_keys.main.secret_key
-}
+# module "s3" {
+#   source = "./modules/s3"
+#   
+#   secret_key_id = fastly_object_storage_access_keys.main.id
+#   secret_key    = fastly_object_storage_access_keys.main.secret_key
+# }
 
 
 output "fastly_access_key" {
